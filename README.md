@@ -217,7 +217,7 @@ This is a personal project by [@marcosrochagpm](https://x.com/marcosrochagpm). F
 
 ## 📄 License
 
-Proprietary
+MIT
 
 ---
 
