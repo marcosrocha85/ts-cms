@@ -179,8 +179,6 @@ npm install <package> -w @ts-cms/backend
 
 ## ⚙️ Key Features
 
-### Completed ✅
-
 - JWT authentication with refresh tokens
 - TypeORM with MySQL (auto-sync in development)
 - Docker containerization
@@ -200,9 +198,6 @@ npm install <package> -w @ts-cms/backend
 - Profile and Settings pages
 - Tweet creation/editing with media upload
 - Password change endpoint
-
-### In Progress 🚧
-
 - Dashboard charts and calendar
 - Advanced filters (status, date range)
 - Testing with Jest
@@ -215,7 +210,6 @@ npm install <package> -w @ts-cms/backend
 - **Database auto-sync:** Enabled in development only
 - **Monorepo:** npm workspaces for dependency isolation
 - **Clean Architecture:** Frontend follows domain/data/presentation layers
-- **Progress tracking:** Check `docs/todo.md` for detailed status
 
 ## 🤝 Contributing
 
