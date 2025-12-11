@@ -1,0 +1,31 @@
+{
+  "name": "ts-cms",
+  "version": "0.0.1",
+  "description": "TweetScheduler CMS - Monorepo with NestJS backend and Next.js frontend",
+  "author": "Marcos Rocha <marcosrocha85@gmail.com>",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "dev": "concurrently \"cd apps/backend && npm run dev\" \"cd apps/frontend && npm run dev\" --names \"backend,frontend\" --prefix-colors \"blue,magenta\"",
+    "build": "cd apps/backend && npm run build && cd ../frontend && npm run build",
+    "start": "cd apps/backend && npm run start",
+    "start:prod": "cd apps/backend && npm run prod",
+    "lint": "cd apps/backend && npm run lint && cd ../frontend && npm run lint",
+    "test": "cd apps/backend && npm run test",
+    "backend": "cd apps/backend && npm run dev",
+    "frontend": "cd apps/frontend && npm run dev",
+    "backend:build": "cd apps/backend && npm run build",
+    "frontend:build": "cd apps/frontend && npm run build",
+    "seed": "cd apps/backend && npm run seed",
+    "infra:up": "docker-compose -f infrastructure/docker-compose.yml up -d",
+    "infra:down": "docker-compose -f infrastructure/docker-compose.yml down",
+    "infra:logs": "docker-compose -f infrastructure/docker-compose.yml logs -f"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  }
+}

@@ -1,0 +1,156 @@
+/* Accessibility Styles (A11y) */
+
+/* Enhanced Focus States - visible and consistent across all interactive elements */
+:focus-visible {
+    outline: 2px solid var(--primary-color) !important;
+    outline-offset: 2px !important;
+    border-radius: 4px;
+}
+
+/* Specific focus states for form elements */
+.p-inputtext:focus,
+.p-inputtextarea:focus,
+.p-calendar input:focus,
+.p-password-input:focus,
+.p-dropdown:focus,
+.p-multiselect:focus {
+    outline: 2px solid var(--primary-color) !important;
+    outline-offset: 2px !important;
+    box-shadow: 0 0 0 0.2rem rgba(var(--primary-color-rgb), 0.25) !important;
+}
+
+/* Button focus states */
+.p-button:focus-visible,
+.p-splitbutton-defaultbutton:focus-visible,
+.p-splitbutton-menubutton:focus-visible {
+    outline: 2px solid var(--primary-color) !important;
+    outline-offset: 2px !important;
+    box-shadow: 0 0 0 0.2rem rgba(var(--primary-color-rgb), 0.25) !important;
+}
+
+/* Checkbox and Radio focus states */
+.p-checkbox:focus-visible .p-checkbox-box,
+.p-radiobutton:focus-visible .p-radiobutton-box {
+    outline: 2px solid var(--primary-color) !important;
+    outline-offset: 2px !important;
+    box-shadow: 0 0 0 0.2rem rgba(var(--primary-color-rgb), 0.25) !important;
+}
+
+/* FileUpload focus state */
+.p-fileupload-choose:focus-visible {
+    outline: 2px solid var(--primary-color) !important;
+    outline-offset: 2px !important;
+    box-shadow: 0 0 0 0.2rem rgba(var(--primary-color-rgb), 0.25) !important;
+}
+
+/* Menu and navigation focus states */
+.layout-menu .layout-menuitem-root-text:focus-visible,
+.layout-menu .layout-menuitem > a:focus-visible {
+    outline: 2px solid var(--primary-color) !important;
+    outline-offset: -2px !important;
+}
+
+/* Dialog and overlay focus trapping */
+.p-dialog:focus-visible,
+.p-sidebar:focus-visible,
+.p-overlay-mask:focus-visible {
+    outline: none !important;
+}
+
+/* Skip to main content link (for keyboard users) */
+.skip-to-main {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 9999;
+    border-radius: 0 0 4px 0;
+    transition: top 0.3s;
+    
+    &:focus {
+        top: 0;
+        outline: 2px solid var(--text-color);
+        outline-offset: 2px;
+    }
+}
+
+/* Improve link visibility */
+a:not(.p-button):focus-visible {
+    outline: 2px solid var(--primary-color) !important;
+    outline-offset: 2px !important;
+    border-radius: 2px;
+}
+
+/* Ensure high contrast for disabled states */
+.p-disabled,
+.p-component:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Screen reader only content */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Focus within container (for complex components) */
+.p-datatable:focus-within,
+.p-card:focus-within {
+    box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.15);
+}
+
+/* Improve keyboard navigation visibility in tables */
+.p-datatable-tbody > tr:focus-within {
+    background-color: rgba(var(--primary-color-rgb), 0.05) !important;
+}
+
+/* Calendar keyboard navigation */
+.p-datepicker-calendar td:focus-within span {
+    outline: 2px solid var(--primary-color) !important;
+    outline-offset: -2px !important;
+}
+
+/* Toast accessibility */
+.p-toast {
+    z-index: 9999;
+    
+    .p-toast-message {
+        &:focus-visible {
+            outline: 2px solid var(--surface-border) !important;
+            outline-offset: 2px !important;
+        }
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :focus-visible {
+        outline-width: 3px !important;
+    }
+    
+    .p-button:focus-visible,
+    .p-inputtext:focus,
+    .p-inputtextarea:focus {
+        outline-width: 3px !important;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
